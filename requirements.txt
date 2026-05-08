@@ -1,0 +1,5 @@
+rich
+textual
+watchdog
+deepdiff
+pydantic

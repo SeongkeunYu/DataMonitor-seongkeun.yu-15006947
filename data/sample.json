@@ -1,0 +1,88 @@
+{
+  "system": {
+    "name": "DataMonitor",
+    "version": "1.0.0",
+    "status": "running",
+    "uptime_seconds": 3600
+  },
+  "database": {
+    "primary": {
+      "host": "db-primary.internal",
+      "port": 5432,
+      "status": "connected",
+      "connections": {
+        "active": 8,
+        "idle": 5,
+        "max": 100
+      }
+    },
+    "replica": {
+      "host": "db-replica.internal",
+      "port": 5432,
+      "status": "connected",
+      "connections": {
+        "active": 13,
+        "idle": 3,
+        "max": 50
+      }
+    }
+  },
+  "cache": {
+    "redis": {
+      "host": "cache.internal",
+      "port": 6379,
+      "status": "connected",
+      "stats": {
+        "hit_rate": 0.74,
+        "used_memory_mb": 256,
+        "total_keys": 17861
+      }
+    }
+  },
+  "queues": [
+    {
+      "name": "email",
+      "status": "active",
+      "pending": 58,
+      "processed_today": 1939,
+      "workers": {
+        "running": 3,
+        "idle": 1
+      }
+    },
+    {
+      "name": "report",
+      "status": "active",
+      "pending": 99,
+      "processed_today": 181,
+      "workers": {
+        "running": 1,
+        "idle": 2
+      }
+    },
+    {
+      "name": "notification",
+      "status": "paused",
+      "pending": 0,
+      "processed_today": 540,
+      "workers": {
+        "running": 0,
+        "idle": 2
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-001",
+      "level": "warning",
+      "message": "DB primary connection count exceeds 10",
+      "triggered_at": "2026-05-08T09:15:00Z"
+    },
+    {
+      "id": "ALT-002",
+      "level": "info",
+      "message": "Cache hit rate below 90%",
+      "triggered_at": "2026-05-08T10:02:00Z"
+    }
+  ]
+}
