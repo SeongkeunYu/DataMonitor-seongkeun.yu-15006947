@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# 가상환경
+.venv/
+venv/
+env/
+
+# 환경변수
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 테스트 / 커버리지
+.pytest_cache/
+.coverage
+htmlcov/
